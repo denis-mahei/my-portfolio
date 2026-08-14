@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="p-4 lg:p-17.5 min-h-screen">
           <div className="border border-stroke rounded-lg min-h-[calc(100vh-32px)] lg:min-h-[calc(100vh-140px)] flex flex-col bg-background">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 flex flex-col">{children}</main>
             <Footer />
           </div>
         </div>

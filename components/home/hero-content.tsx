@@ -2,7 +2,7 @@ import * as React from "react";
 
 function HeroContent() {
   return (
-    <div className="flex flex-col justify-center px-6 lg:px-16 py-8">
+    <div className="flex flex-col justify-center px-6 lg:px-16 py-8 h-full">
       <p className="text-[18px] mb-1">Hi all. I am</p>
       <h1 className="text-[60px] text-heading-foreground">Denys Mahei</h1>
       <p className="text-indigo-500 text-xl">
