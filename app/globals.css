@@ -181,6 +181,12 @@
     --primary-inverted: var(--primitive-slate-950);
     --primary-hover-inverted: var(--primitive-slate-950);
     --theme-link-hover-foreground: var(--primitive-rose-200);
+    --card-gradient: linear-gradient(
+            154deg,
+            #175553 0%,
+            #43D9AD21 100%
+    );
+
 
     --primary-background: var(--primitive-orange-300);
     --theme-theme-backdrop: var(--primitive-slate-950);
