@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "@remixicon/react": "^4.9.0",
+    "add": "^2.0.9",
     "clsx": "^2.1.1",
-    "framer-motion": "^13.1.0",
+    "motion": "^13.1.0",
     "next": "16.3.0",
     "prettier": "^3.9.6",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "tailwind-merge": "^3.6.0"
+    "tailwind-merge": "^3.6.0",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
