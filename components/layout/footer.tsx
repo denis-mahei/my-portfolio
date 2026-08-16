@@ -24,7 +24,7 @@ function Footer() {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <p className="px-6 py-4 border-r border-r-stroke">
-            find me in:
+            find me:
           </p>
           {socials.map((social) => (
             <a
