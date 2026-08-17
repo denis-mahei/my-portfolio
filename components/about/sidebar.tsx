@@ -25,15 +25,18 @@ function Sidebar({ activeFileId, onFileSelect }: SidebarProps) {
   };
 
   return (
-    <aside className="flex flex-col h-ful gap-1">
+    <aside className="flex flex-col h-full lg:border-r lg:border-stroke">
       {aboutData.map((section) => {
         const isOpen = openSections.includes(section.id);
 
         return (
-          <div key={section.id}>
+          <div
+            key={section.id}
+            className="lg:border-b lg:border-stroke lg:last:border-b-0"
+          >
             <button
               onClick={() => toggleSection(section.id)}
-              className="w-full px-4 py-3 flex items-center gap-2 text-heading-foreground bg-slate-700"
+              className="w-full px-4 py-3 flex items-center gap-2 text-heading-foreground bg-slate-700 lg:bg-transparent lg:border-b lg:border-stroke border-stroke border-t first:border-t-0"
             >
               <motion.div
                 animate={{ rotate: isOpen ? 90 : 0 }}

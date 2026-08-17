@@ -13,8 +13,10 @@ function Page() {
     .find((file) => file.id === activeFileId);
 
   return (
-    <div className="flex flex-col h-full">
-      <h2 className="p-6 text-heading-foreground text-sm">_about</h2>
+    <div className="flex flex-col flex-1 lg:grid lg:grid-cols-[24.7%_1fr]">
+      <h2 className="p-6 text-heading-foreground text-sm lg:hidden">
+        _about
+      </h2>
       <Sidebar
         activeFileId={activeFileId}
         onFileSelect={setActiveFileId}
