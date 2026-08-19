@@ -50,7 +50,7 @@ function Sidebar() {
                       <span className="ml-0.5 ring ring-stroke rounded-xs w-5 h-5 peer-checked:bg-slate-500 transition-colors"></span>
                       <RiCheckLine
                         size={14}
-                        className="opacity-0 peer-checked:opacity-100 transition-opacity absolute left-[5%]"
+                        className="opacity-0 peer-checked:opacity-100 transition-opacity absolute left-[5%] text-slate-50"
                       />
                       <Icon size={24} className="text-slate-500" />
                       <span className="text-gray-50">
