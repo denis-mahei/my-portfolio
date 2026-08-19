@@ -1,20 +1,20 @@
-import * as React from 'react';
-import Image from 'next/image';
+import Sidebar from '@/components/projects/sidebar';
 
-function Page() {
+type PageProps = {
+  searchParams: Promise<{
+    [key: string]: string | string[] | undefined;
+  }>;
+};
+
+async function Page({ searchParams }: PageProps) {
+  const params = await searchParams;
+  console.log(params);
   return (
-    <div>
+    <div className="flex flex-col flex-1 lg:grid lg:grid-cols-[24.7%_1fr]">
       <h2 className="p-6 text-heading-foreground text-sm lg:hidden">
         _projects
       </h2>
-      <Image
-        src="https://res.cloudinary.com/contactscloud/image/upload/v1787059163/readjourneyimg.png"
-        alt="pic"
-        width={300}
-        height={400}
-        className="rounded-xl"
-        unoptimized
-      />
+      <Sidebar />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import {
   RiHtml5Fill,
   RiNodejsLine,
 } from '@remixicon/react';
+import { SiNestjs } from '@icons-pack/react-simple-icons';
 
 export type ProjectTag =
   | 'react'
@@ -64,5 +65,5 @@ export const availableTags: {
   { id: 'next', icon: RiNextjsFill, label: 'Next.js' },
   { id: 'html', icon: RiHtml5Fill, label: 'HTML' },
   { id: 'nodejs', icon: RiNodejsLine, label: 'NodeJS' },
-  { id: 'nestjs', icon: 'Nest', label: 'NestJS' },
+  { id: 'nestjs', icon: SiNestjs, label: 'NestJS' },
 ];
