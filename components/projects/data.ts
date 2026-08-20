@@ -61,8 +61,8 @@ export const availableTags: {
   label: string;
   icon: RemixiconComponentType;
 }[] = [
-  { id: 'react', icon: RiReactjsLine, label: 'React' },
   { id: 'next', icon: RiNextjsFill, label: 'Next.js' },
+  { id: 'react', icon: RiReactjsLine, label: 'React' },
   { id: 'html', icon: RiHtml5Fill, label: 'HTML' },
   { id: 'nodejs', icon: RiNodejsLine, label: 'NodeJS' },
   { id: 'nestjs', icon: SiNestjs, label: 'NestJS' },

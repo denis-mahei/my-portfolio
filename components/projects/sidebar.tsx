@@ -5,11 +5,41 @@ import { AnimatePresence, motion } from 'motion/react';
 
 import { availableTags } from '@/components/projects/data';
 import { RiArrowRightSFill, RiCheckLine } from '@remixicon/react';
+import {
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from 'next/navigation';
+import { useSelectedTags } from '@/lib/hooks/useSelectedTags';
 
 function Sidebar() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const selectedTags = useSelectedTags();
 
   const handleToggle = () => setIsOpen(!isOpen);
+
+  const handleTagChange = (tagId: string) => {
+    let newTags;
+    if (selectedTags.includes(tagId)) {
+      newTags = selectedTags.filter((t) => t !== tagId);
+    } else {
+      newTags = [...selectedTags, tagId];
+    }
+    const params = new URLSearchParams(searchParams.toString());
+    if (newTags.length) {
+      params.set('tags', newTags.join(','));
+    } else {
+      params.delete('tags');
+    }
+    const queryString = params.toString();
+    const newUrl = queryString
+      ? `${pathname}?${queryString}`
+      : pathname;
+    router.replace(newUrl, { scroll: false });
+  };
 
   return (
     <aside className="flex flex-col h-full lg:border-r lg:border-stroke">
@@ -26,10 +56,10 @@ function Sidebar() {
           </motion.div>
           _filter
         </button>
-        {availableTags.map((tags) => {
-          const Icon = tags.icon;
+        {availableTags.map((tag) => {
+          const Icon = tag.icon;
           return (
-            <div key={tags.id} className="py-3 px-4">
+            <div key={tag.id}>
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
@@ -37,15 +67,17 @@ function Sidebar() {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2, ease: 'easeOut' }}
-                    className="flex items-center gap-6 overflow-hidden"
+                    className="flex items-center gap-6 overflow-hidden py-3 px-4"
                   >
                     <label
-                      key={tags.id}
+                      key={tag.id}
                       className="flex gap-2 items-center relative"
                     >
                       <input
                         type="checkbox"
                         className="peer sr-only"
+                        checked={selectedTags.includes(tag.id)}
+                        onChange={() => handleTagChange(tag.id)}
                       />
                       <span className="ml-0.5 ring ring-stroke rounded-xs w-5 h-5 peer-checked:bg-slate-500 transition-colors"></span>
                       <RiCheckLine
@@ -54,7 +86,7 @@ function Sidebar() {
                       />
                       <Icon size={24} className="text-slate-500" />
                       <span className="text-gray-50">
-                        {tags.label}
+                        {tag.label}
                       </span>
                     </label>
                   </motion.div>

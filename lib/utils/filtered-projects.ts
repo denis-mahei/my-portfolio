@@ -1,4 +1,4 @@
-import { Project, projects } from '@/components/projects/data';
+import type { Project } from '@/components/projects/data';
 
 export const filteredProjects = (
   projects: Project[],
@@ -9,5 +9,3 @@ export const filteredProjects = (
     project.tags.some((tag) => selectedTags.includes(tag)),
   );
 };
-
-console.log(filteredProjects(projects, ['next']));
