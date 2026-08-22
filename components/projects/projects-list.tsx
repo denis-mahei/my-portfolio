@@ -9,6 +9,7 @@ import Image from 'next/image';
 function ProjectsList() {
   const selectedTags = useSelectedTags();
   const projectsList = filteredProjects(projects, selectedTags);
+
   return (
     <div className="p-6 lg:p-16">
       <ul className="grid grid-cols-1 lg:grid-cols-3 gap-2.5">

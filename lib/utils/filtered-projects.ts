@@ -5,6 +5,7 @@ export const filteredProjects = (
   selectedTags: string[],
 ) => {
   if (selectedTags.length === 0) return projects;
+
   return projects.filter((project) =>
     project.tags.some((tag) => selectedTags.includes(tag)),
   );

@@ -1,10 +1,9 @@
 import {
   RemixiconComponentType,
-  RiNextjsFill,
-  RiReactjsLine,
   RiHtml5Fill,
+  RiNextjsFill,
   RiNodejsLine,
-  RiReactjsFill,
+  RiReactjsLine,
 } from '@remixicon/react';
 import { SiNestjs } from '@icons-pack/react-simple-icons';
 
@@ -77,7 +76,7 @@ export const projects: Project[] = [
     displayName: '_contacts-manager',
     description:
       'A full-stack contact management application with authentication, built with React (frontend) and a Node.js/Express backend API.',
-    tags: ['react', 'redux', 'mui', 'axios', 'jwt-auth'],
+    tags: ['react', 'redux', 'mui', 'axios', 'jwt-auth', 'nodejs'],
     liveUrl: 'https://contact-book-manager-dm.vercel.app',
     codeUrl: {
       frontend: 'https://github.com/denis-mahei/contact-manager-app',
