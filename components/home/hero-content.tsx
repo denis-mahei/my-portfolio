@@ -1,3 +1,7 @@
+'use client';
+import { motion } from 'motion/react';
+import { TypeAnimation } from 'react-type-animation';
+
 function HeroContent() {
   return (
     <div className="flex flex-col justify-center items-center h-full px-6 relative">
@@ -10,22 +14,47 @@ function HeroContent() {
         style={{ backgroundColor: 'rgba(97, 95, 255, 0.4)' }}
       />
       <div className="w-full max-w-md">
-        <p className="text-[18px] mb-1">Hi all. I am</p>
-        <h1 className="text-[48px] lg:text-[60px] text-heading-foreground">
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="text-[18px] mb-1"
+        >
+          Hi all. I am
+        </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="text-[48px] lg:text-[60px] text-heading-foreground"
+        >
           Denys Mahei
-        </h1>
-        <p className="text-[20px] text-indigo-500 lg:text-[30px]">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="text-[20px] text-indigo-500 lg:text-[30px]"
+        >
           <span>&gt;</span> Junior Fullstack Developer
-        </p>
+        </motion.p>
         <div className="mt-24" />
 
         <div className="space-y-1 text-sm">
-          <p className="hidden text-foreground lg:block">
-            // welcome to my portfolio
-          </p>
-          <p className="text-foreground">
-            // find my profile on Github:
-          </p>
+          <TypeAnimation
+            wrapper="p"
+            className="text-foreground"
+            sequence={['// welcome to my portfolio']}
+            speed={50}
+            cursor={false}
+          />
+          <TypeAnimation
+            wrapper="p"
+            className="text-foreground"
+            sequence={[1400, '// find my profile on Github:']}
+            speed={50}
+            cursor
+          />
           <p>
             <span className="text-purple-400">const </span>
             <span className="text-teal-400">githubLink</span>
@@ -36,7 +65,7 @@ function HeroContent() {
               rel="noopener noreferrer"
               className="text-link-foreground hover:text-link-hover transition-colors underline"
             >
-              "https://github.com/denis-mahei"
+              &#34;https://github.com/denis-mahei&#34;
             </a>
           </p>
         </div>
