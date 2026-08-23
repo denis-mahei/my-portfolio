@@ -42,7 +42,7 @@ function ProjectsList() {
                     color="slate-900"
                   />
                 </div>
-                <div className="bg-slate-950 p-4 flex flex-col gap-5">
+                <div className="bg-slate-950 p-4 flex flex-col gap-5 border-t border-t-stroke">
                   <p className="line-clamp-2">
                     {project.description}
                   </p>

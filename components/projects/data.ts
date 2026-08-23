@@ -5,7 +5,7 @@ import {
   RiNodejsLine,
   RiReactjsLine,
 } from '@remixicon/react';
-import { SiNestjs } from '@icons-pack/react-simple-icons';
+import { SiNestjs, SiRedux } from '@icons-pack/react-simple-icons';
 
 export type ProjectTag =
   | 'react'
@@ -101,6 +101,21 @@ export const projects: Project[] = [
     image: '/e-pharmacy.webp',
     icon: RiNextjsFill,
   },
+  {
+    id: 'movies',
+    name: 'movies-search',
+    displayName: '_movie-search',
+    description:
+      'A dynamic and user-friendly movie search application built with React, powered by The Movie Database (TMDB) API',
+    tags: ['react', 'axios'],
+    liveUrl:
+      'https://movie-search-app-denismahei-projects.vercel.app/',
+    codeUrl: {
+      frontend: 'https://github.com/denis-mahei/movie-search-app',
+    },
+    image: '/movie.webp',
+    icon: RiReactjsLine,
+  },
 ];
 
 export const availableTags: {
@@ -113,4 +128,5 @@ export const availableTags: {
   { id: 'html', icon: RiHtml5Fill, label: 'HTML' },
   { id: 'nodejs', icon: RiNodejsLine, label: 'NodeJS' },
   { id: 'nestjs', icon: SiNestjs, label: 'NestJS' },
+  { id: 'redux', icon: SiRedux, label: 'Redux' },
 ];
