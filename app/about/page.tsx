@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { aboutData } from '@/lib/data';
 import Sidebar from '@/components/about/sidebar';
+import Wrapper from '@/components/layout/wrapper';
 
 function Page() {
   const [activeFileId, setActiveFileId] = useState('bio');
@@ -13,16 +14,13 @@ function Page() {
     .find((file) => file.id === activeFileId);
 
   return (
-    <div className="flex flex-col flex-1 lg:grid lg:grid-cols-[24.7%_1fr]">
-      <h2 className="p-6 text-heading-foreground text-sm lg:hidden">
-        _about
-      </h2>
+    <Wrapper title={'_about'}>
       <Sidebar
         activeFileId={activeFileId}
         onFileSelect={setActiveFileId}
       />
       <p className="p-6">{activeFile?.content}</p>
-    </div>
+    </Wrapper>
   );
 }
 export default Page;

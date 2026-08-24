@@ -1,6 +1,7 @@
-import * as React from "react";
+import React from 'react';
+import Wrapper from '@/components/layout/wrapper';
 
 function Page() {
-  return <div></div>;
+  return <Wrapper title={'_contacts-me'}></Wrapper>;
 }
 export default Page;

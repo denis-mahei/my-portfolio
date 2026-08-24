@@ -1,15 +1,13 @@
 import ProjectsList from '@/components/projects/projects-list';
 import Sidebar from '@/components/projects/sidebar';
+import Wrapper from '@/components/layout/wrapper';
 
 async function Page() {
   return (
-    <div className="flex flex-col flex-1 lg:grid lg:grid-cols-[24.7%_1fr]">
-      <h2 className="p-6 text-heading-foreground text-sm lg:hidden">
-        _projects
-      </h2>
+    <Wrapper title={'_projects'}>
       <Sidebar />
       <ProjectsList />
-    </div>
+    </Wrapper>
   );
 }
 export default Page;
