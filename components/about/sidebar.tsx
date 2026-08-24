@@ -1,9 +1,10 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { aboutData } from '@/lib/data';
+import { aboutData } from '@/components/about/data';
 import CollapsibleSection from '@/components/ui/collapsible-section';
 import { RiFileCodeFill } from '@remixicon/react';
+import ContactsList from '../contacts/contacts-list';
 
 type SidebarProps = {
   activeFileId: string;
@@ -20,50 +21,30 @@ function Sidebar({ activeFileId, onFileSelect }: SidebarProps) {
             key={section.id}
             defaultOpen={section.id === 'personal-info'}
           >
-            {section.type === 'files'
-              ? section.children.map((file) => (
-                  <button
-                    key={file.id}
-                    onClick={() => onFileSelect(file.id)}
-                    className={cn(
-                      'w-full text-left px-4 py-2 transition-colors flex' +
-                        ' items-center gap-1 ',
-                      activeFileId === file.id
-                        ? 'text-heading-foreground'
-                        : 'text-foreground hover:text-heading-foreground',
-                    )}
-                  >
-                    <RiFileCodeFill />
-                    {file.label}
-                  </button>
-                ))
-              : section.children.map((link) => (
-                  <div key={link.id} className="flex flex-col">
-                    <a
-                      href={link.href}
-                      target={
-                        link.href.startsWith('http')
-                          ? '_blank'
-                          : undefined
-                      }
-                      rel={
-                        link.href.startsWith('http')
-                          ? 'noopener noreferrer'
-                          : undefined
-                      }
-                      className="flex items-center py-2 px-4 gap-1 text-teal-400"
-                    >
-                      <link.icon
-                        size={16}
-                        className="text-heading-foreground"
-                      />
-                      {link.label}
-                    </a>
-                  </div>
-                ))}
+            {section.children.map((file) => {
+              return (
+                <button
+                  key={file.id}
+                  onClick={() => onFileSelect(file.id)}
+                  className={cn(
+                    'w-full text-left px-4 py-2 transition-colors flex' +
+                      ' items-center gap-1 ',
+                    activeFileId === file.id
+                      ? 'text-heading-foreground'
+                      : 'text-foreground hover:text-heading-foreground',
+                  )}
+                >
+                  <RiFileCodeFill />
+                  {file.label}
+                </button>
+              );
+            })}
           </CollapsibleSection>
         );
       })}
+      <CollapsibleSection label="contacts">
+        <ContactsList />
+      </CollapsibleSection>
     </aside>
   );
 }
