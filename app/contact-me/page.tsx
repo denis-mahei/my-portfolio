@@ -15,6 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 function Page() {
   const methods = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
+    mode: 'onTouched',
   });
   return (
     <FormProvider {...methods}>
