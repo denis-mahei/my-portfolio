@@ -44,7 +44,7 @@ function Sidebar() {
           return (
             <label
               key={tag.id}
-              className="flex gap-2 py-3 px-4 items-center relative"
+              className="flex gap-2 py-3 px-4 items-center cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -52,11 +52,12 @@ function Sidebar() {
                 checked={selectedTags.includes(tag.id)}
                 onChange={() => handleTagChange(tag.id)}
               />
-              <span className="ml-0.5 ring ring-stroke rounded-xs w-5 h-5 peer-checked:bg-slate-500 transition-colors"></span>
-              <RiCheckLine
-                size={14}
-                className="opacity-0 peer-checked:opacity-100 transition-opacity absolute left-[5%] text-slate-50"
-              />
+              <span className="relative w-5 h-5 ring ring-stroke rounded-xs peer-checked:bg-slate-500 peer-checked:[&>svg]:opacity-100 transition-colors">
+                <RiCheckLine
+                  size={14}
+                  className="absolute inset-0 m-auto opacity-0 transition-opacity text-slate-50"
+                />
+              </span>
               <Icon size={24} className="text-slate-500" />
               <span className="text-gray-50">{tag.label}</span>
             </label>
