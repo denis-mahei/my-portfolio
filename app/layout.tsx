@@ -18,7 +18,18 @@ const inter = Inter({
 });
 export const metadata: Metadata = {
   title: 'Denys Mahei',
-  description: 'Fullstack Developer',
+  description: 'Portfolio a fullstack Developer specializing in React, Next.js, and Node.js',
+  openGraph: {
+    title: 'Denys Mahei — Fullstack Developer',
+    description: 'Portfolio a fullstack Developer specializing in React, Next.js, and Node.js',
+    type: 'website',
+    url: 'https://my-portfolio-seven-mauve-67.vercel.app',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Denys Mahei — Fullstack Developer',
+    description: 'Portfolio a fullstack Developer specializing in React, Next.js, and Node.js',
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
