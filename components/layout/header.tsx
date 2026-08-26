@@ -5,8 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { RiCloseFill, RiMenu3Fill } from '@remixicon/react';
-import { useState } from 'react';
-import MobileMenu from '@/components/layout/mobile-menu';
 import { useMenuStore } from '@/stores/useMenuStore';
 
 const links = [
@@ -36,9 +34,7 @@ function Header() {
                 className={cn(
                   tabClasses,
                   'last:border-r last:border-r-stroke',
-                  pathname === link.path
-                    ? 'text-heading-foreground after:bg-primary'
-                    : 'after:bg-transparent',
+                  pathname === link.path ? 'text-heading-foreground after:bg-primary' : 'after:bg-transparent',
                 )}
               >
                 {link.label}
@@ -50,9 +46,7 @@ function Header() {
             className={cn(
               tabClasses,
               'lg:px-8 lg:py-4 lg:border-l lg:border-l-stroke',
-              pathname === '/contact-me'
-                ? 'text-heading-foreground after:bg-primary'
-                : 'after:bg-transparent',
+              pathname === '/contact-me' ? 'text-heading-foreground after:bg-primary' : 'after:bg-transparent',
             )}
           >
             _contact-me

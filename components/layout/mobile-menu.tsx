@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 const links = [
   { path: '/', label: '_home' },
@@ -37,7 +38,10 @@ function MobileMenu() {
               <Link
                 key={link.path}
                 href={link.path}
-                className="py-3 text-heading-foreground"
+                className={cn(
+                  "relative after:absolute after:bottom-0 after:left-0 self-start after:w-full after:h-0.5 after:content-[''] py-3 text-heading-foreground",
+                  pathname === link.path ? 'text-heading-foreground after:bg-primary' : 'after:bg-transparent',
+                )}
               >
                 {link.label}
               </Link>
