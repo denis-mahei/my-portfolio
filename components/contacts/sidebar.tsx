@@ -1,4 +1,3 @@
-import * as React from 'react';
 import CollapsibleSection from '@/components/ui/collapsible-section';
 import ContactsList from '@/components/contacts/contacts-list';
 

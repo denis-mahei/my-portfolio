@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { aboutData } from '@/components/about/data';
 import Sidebar from '@/components/about/sidebar';
 import Wrapper from '@/components/layout/wrapper';
+import BioContent from '@/components/about/bio-content';
 
 function Page() {
   const [activeFileId, setActiveFileId] = useState('bio');
@@ -18,7 +19,7 @@ function Page() {
         activeFileId={activeFileId}
         onFileSelect={setActiveFileId}
       />
-      <p className="p-6">{activeFile?.content}</p>
+      <BioContent content={activeFile?.content as string} />
     </Wrapper>
   );
 }

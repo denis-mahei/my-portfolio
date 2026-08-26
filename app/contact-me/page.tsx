@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Wrapper from '@/components/layout/wrapper';
 import Sidebar from '@/components/contacts/sidebar';
 import Form from '@/components/contacts/form';
